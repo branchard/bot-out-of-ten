@@ -22,5 +22,8 @@
   "homepage": "https://github.com/branchard/bot-out-of-ten#readme",
   "devDependencies": {
     "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "discord.js": "^11.5.1"
   }
 }
