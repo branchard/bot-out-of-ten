@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "system",
-    "outFile": "built/index.js",
+    "outDir": "dist",
     "sourceMap": true
   },
   "include": [
