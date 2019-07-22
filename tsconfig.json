@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "system",
+    "outFile": "built/index.js",
+    "sourceMap": true
+  },
+  "include": [
+    "src"
+  ]
+}

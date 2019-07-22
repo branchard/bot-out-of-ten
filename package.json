@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/branchard/bot-out-of-ten/issues"
   },
-  "homepage": "https://github.com/branchard/bot-out-of-ten#readme"
+  "homepage": "https://github.com/branchard/bot-out-of-ten#readme",
+  "devDependencies": {
+    "typescript": "^3.5.3"
+  }
 }
