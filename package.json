@@ -1,0 +1,23 @@
+{
+  "name": "bot-out-of-ten",
+  "version": "0.0.0",
+  "description": "Yet another Discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/branchard/bot-out-of-ten.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "branchard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/branchard/bot-out-of-ten/issues"
+  },
+  "homepage": "https://github.com/branchard/bot-out-of-ten#readme"
+}
