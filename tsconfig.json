@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "module": "system",
     "outDir": "dist",
     "sourceMap": true
   },
