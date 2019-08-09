@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import Person from "./Person";
 
-const RATES_FILE_PATH = path.join(__dirname, '../rates.json');
+const RATES_FILE_PATH = path.join(__dirname, '../ratings.json');
 
 type RateJson = { person: { name: string, email: string, position: string, photo: string }, value: number };
 
