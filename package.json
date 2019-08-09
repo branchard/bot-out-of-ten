@@ -2,6 +2,7 @@
   "name": "bot-out-of-ten",
   "version": "0.0.0",
   "description": "Yet another Discord bot",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,9 +22,14 @@
   },
   "homepage": "https://github.com/branchard/bot-out-of-ten#readme",
   "devDependencies": {
+    "@types/node": "^12.6.8",
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "discord.js": "^11.5.1"
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.0.0",
+    "lodash": "^4.17.15",
+    "node-fetch": "^2.6.0",
+    "string-format": "^2.0.0"
   }
 }
