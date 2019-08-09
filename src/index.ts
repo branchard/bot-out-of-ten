@@ -3,7 +3,6 @@ import Bot from './Bot';
 import {Client, TextChannel} from "discord.js";
 import readline from "readline";
 import UiFacesProvider from "./providers/UiFacesProvider";
-import LolProvider from "./providers/LolProvider";
 
 dotenv.config();
 
