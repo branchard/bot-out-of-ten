@@ -1,27 +1,41 @@
 import fetch from 'node-fetch';
 import AbstractPersonProvider from "./AbstractPersonProvider";
 import Person from "../Person";
+import UUID from 'uuid-1345';
+import Gender from "../Gender";
+
+const BASE_URL = 'https://uifaces.co/api?limit=1&random';
 
 export default class UiFacesProvider extends AbstractPersonProvider {
-    private readonly url: string;
     private readonly apiKey: string;
 
-    constructor(apiKey: string, gender: 'female' | 'male') {
+    constructor(apiKey: string) {
         super();
-        this.url = 'https://uifaces.co/api?limit=1&gender[]=female&random';
         this.apiKey = apiKey;
     }
 
-    public async getRandom(): Promise<Person> {
+    private getUrl(gender: Gender): string {
+        if (gender === Gender.both) {
+            return BASE_URL
+        }
+
+        return BASE_URL + `&gender[]=${gender}`;
+    }
+
+    public async getRandom(gender: Gender): Promise<Person> {
         let headers = new fetch.Headers();
         headers.append('X-API-KEY', this.apiKey);
-        return fetch(this.url, {
+        return fetch(this.getUrl(gender), {
             method: 'GET',
             headers
         }).then(function (response) {
             return response.json();
         }).then(function (person) {
-            return new Person(person[0].name, person[0].email, person[0].position, person[0].photo);
+            // guildId based on photo url
+            return new Person(UUID.v5({
+                namespace: UUID.namespace.url,
+                name: person[0].photo
+            }), person[0].name, person[0].photo, gender);
         });
     };
 }

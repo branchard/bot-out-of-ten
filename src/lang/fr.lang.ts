@@ -1,3 +1,4 @@
+import Settings from '../Settings';
 import {t, g, s} from './index';
 
 export default {
@@ -38,6 +39,23 @@ export default {
     ),
     [s.SESSION_FINISH]: g(
         t`Merci d'avoir participé \nles notes sont: ${props => props.ratings.join(', ')}`,
-        t`C'est fini\nles notes sont: ${props => props.ratings.join(', ')}\nn'hésite pas à taper \`!bot rank\` pour voir le classement`,
+        t`C'est fini\nles notes sont: ${props => props.ratings.join(', ')}\nn'hésite pas à taper \`${Settings.commandsPrefix} ${Settings.Commands.Rank}\` pour voir le classement`,
     ),
+    [s.RANK_START]: t`Voila le top ${props => props.number}`,
+    [s.RANK_START_REVERSE]: t`Voici le top ${props => props.number} inversé`,
+
+    [s.HELP_TITLE]: t('Commandes disponiles :robot:'),
+    [s.HELP]: t(`\n ឵឵
+        :arrow_forward: **${Settings.commandsPrefix} ${Settings.Commands.Start}** - Lancer une notation de 5 meufs
+        :octagonal_sign: **${Settings.commandsPrefix} ${Settings.Commands.Stop}** - Stoper la notation en cours
+        :chart_with_downwards_trend: **${Settings.commandsPrefix} ${Settings.Commands.Rank} [reverse]** - Voir le top 10 des meilleurs ou des pires moeyennes
+        :abc: **${Settings.commandsPrefix} ${Settings.Commands.Lang}** - Voir la liste des langues disponibles
+        :speech_balloon: **${Settings.commandsPrefix} ${Settings.Commands.Lang} <language>** - Définir la langue
+        :restroom: **${Settings.commandsPrefix} ${Settings.Commands.Gender}** - Voir la liste des genres disponibles
+        :mens: **${Settings.commandsPrefix} ${Settings.Commands.Gender} <gender>** - Définir le genre
+        :question: **${Settings.commandsPrefix} ${Settings.Commands.Help}** - Voir l'aide
+        
+        Les valeurs entre [crochets] sont optionels.
+        Les valeurs entre <chevrons> doivent être fournis par vous.
+    `)
 };

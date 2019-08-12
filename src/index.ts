@@ -3,6 +3,10 @@ import Bot from './Bot';
 import {Client, TextChannel} from "discord.js";
 import readline from "readline";
 import UiFacesProvider from "./providers/UiFacesProvider";
+import Store from "./Store";
+import path from "path";
+import Settings from './Settings';
+import Gender from "./Gender";
 
 dotenv.config();
 
@@ -15,7 +19,8 @@ let rl = readline.createInterface({
 const client: Client = new Client;
 
 client.on('ready', () => {
-    const bot = new Bot(client, [new UiFacesProvider(process.env.UIFACES_API_KEY, 'female')]);
+    const bot = new Bot([new UiFacesProvider(process.env.UIFACES_API_KEY)], new Store(path.join(__dirname, '../rating.db'), path.join(__dirname, '../preferences.db')));
+    client.on('message', bot.handleNewMessage);
 
     rl.on('line', (line: string) => {
         for (const [, guild] of client.guilds) {
@@ -33,8 +38,7 @@ client.on('ready', () => {
     });
 
     client.user.setStatus('online');
-
-    bot.run();
+    client.user.setActivity(`${Settings.commandsPrefix} ${Settings.Commands.Help}`, {type: "WATCHING"})
 
     console.log('Client started...');
 });
@@ -52,8 +56,8 @@ client.on('reconnecting', () => {
 });
 
 client.login(process.env.DISCORD_LOGIN_TOKEN)
-    .then((...args) => {
-        console.log('Client logged', ...args)
+    .then(() => {
+        console.log('Client logged')
     })
     .catch((...args) => {
         console.error('Unable to log the client', ...args)
