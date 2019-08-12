@@ -4,7 +4,7 @@ import Person from "./Person";
 import Rating from "./Rating";
 import sample from "lodash/sample"
 import lang, {Language} from "./lang";
-import randomColor from 'randomColor';
+import randomColor from 'randomcolor';
 import AbstractPersonProvider from "./providers/AbstractPersonProvider";
 import Store from "./Store";
 import GuildPreferences from "./GuildPreferences";

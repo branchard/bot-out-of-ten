@@ -26,7 +26,7 @@
   "homepage": "https://github.com/branchard/bot-out-of-ten#readme",
   "devDependencies": {
     "@types/nedb": "^1.8.8",
-    "@types/node": "^12.6.8",
+    "@types/node": "^12.7.1",
     "@types/uuid-1345": "^0.99.21",
     "ts-node-dev": "^1.0.0-pre.40",
     "typescript": "^3.5.3"
