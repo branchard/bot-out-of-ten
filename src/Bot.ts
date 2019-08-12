@@ -229,7 +229,7 @@ class Bot {
             return
         }
 
-        let top = await this.store.getTop(5, reverse);
+        let top = await this.store.getTop(5, preferences.gender, reverse);
 
         let colors: string[] = randomColor({
             count: top.length + 1,

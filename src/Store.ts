@@ -88,9 +88,11 @@ export default class Store {
         });
     }
 
-    public async getTop(limit: number, inverted: boolean = false): Promise<Rating[]> {
+    public async getTop(limit: number, gender: Gender, inverted: boolean = false): Promise<Rating[]> {
         return new Promise((resolve, reject) => {
-            this.ratingsDatastore.find({}).exec((err, docs: StoredPersonSchema[]) => {
+            let query = gender === Gender.both ? {} : {gender};
+
+            this.ratingsDatastore.find(query).exec((err, docs: StoredPersonSchema[]) => {
                 if (err) {
                     reject(err);
                     return
