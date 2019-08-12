@@ -63,4 +63,6 @@ dist
 # IDEs
 .idea
 
-ratings.json
+# DBs
+ratings.db
+preferences.db
