@@ -77,7 +77,7 @@ function getTranslationFor(sentence: s): (selectedLanguage?: Language, props?: {
 
         if (translation === undefined) {
             let fallbackLanguageSentences = languagesSentences[FALLBACK_LANGUAGE];
-            translation = fallbackLanguageSentences[sentence];
+            translation = fallbackLanguageSentences[s[sentence]];
 
             if (translation === undefined) {
                 return 'Translation_missing';
