@@ -19,7 +19,7 @@ let rl = readline.createInterface({
 const client: Client = new Client;
 
 client.on('ready', () => {
-    const bot = new Bot([new UiFacesProvider(process.env.UIFACES_API_KEY)], new Store(path.join(__dirname, '../rating.db'), path.join(__dirname, '../preferences.db')));
+    const bot = new Bot([new UiFacesProvider(process.env.UIFACES_API_KEY)], new Store(path.join(__dirname, '../ratings.db'), path.join(__dirname, '../preferences.db')));
     client.on('message', bot.handleNewMessage);
 
     rl.on('line', (line: string) => {
