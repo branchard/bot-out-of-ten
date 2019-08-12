@@ -38,8 +38,8 @@ export default {
         t`C'est noté`,
     ),
     [s.SESSION_FINISH]: g(
-        t`Merci d'avoir participé \nles notes sont: ${props => props.ratings.join(', ')}`,
-        t`C'est fini\nles notes sont: ${props => props.ratings.join(', ')}\nn'hésite pas à taper \`${Settings.commandsPrefix} ${Settings.Commands.Rank}\` pour voir le classement`,
+        t`Merci d'avoir participé`,
+        t`C'est fini\nn'hésite pas à taper \`${Settings.commandsPrefix} ${Settings.Commands.Rank}\` pour voir le classement`,
     ),
     [s.RANK_START]: t`Voila le top ${props => props.number}`,
     [s.RANK_START_REVERSE]: t`Voici le top ${props => props.number} inversé`,

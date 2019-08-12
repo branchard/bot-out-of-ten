@@ -81,9 +81,9 @@ export default {
         t`C'est noté blaient`,
     ),
     [s.SESSION_FINISH]: g(
-        t`Merci d'avoir participé blé\nles notes sont: ${props => props.ratings.join(', ')}`,
-        t`C'est fini blé\nles notes sont: ${props => props.ratings.join(', ')}`,
-        t`C'est fini blé\nles notes sont: ${props => props.ratings.join(', ')}\nn'hésite pas à taper \`${Settings.commandsPrefix} ${Settings.Commands.Rank}\` pour voir le classement`,
+        t`Merci d'avoir participé blé`,
+        t`C'est fini blé`,
+        t`C'est fini blé\nn'hésite pas à taper \`${Settings.commandsPrefix} ${Settings.Commands.Rank}\` pour voir le classement`,
     ),
     [s.RANK_START]: t`Voila les ${props => props.number} meufs certifié without vergogneless par les bléenfts`,
     [s.RANK_START_REVERSE]: t`Voici les ${props => props.number} meufs qu'aucun bléentfs n'oserai toucher du regard même avec une combinaison à travers la vitre d'une quarantaine ou se trouverai la dite meuf`

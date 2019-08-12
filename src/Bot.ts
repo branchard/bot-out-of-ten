@@ -185,8 +185,6 @@ class Bot {
     }
 
     private* provideCancelableQueue(preferences: GuildPreferences, channel: TextChannel, user: User): IterableIterator<Promise<any>> | any {
-        let ratings: Array<Rating> = [];
-
         yield channel.send(lang.SESSION_START(preferences.language, {user}));
         yield channel.send(lang.SESSION_INSTRUCTIONS(preferences.language));
         yield channel.send(lang.SESSION_LETS_GO(preferences.language));
@@ -219,9 +217,7 @@ class Bot {
             }
             yield channel.send(lang.SESSION_VALID_RATE(preferences.language));
         }
-        yield channel.send(lang.SESSION_FINISH(preferences.language, {ratings}));
-
-        yield ratings;
+        yield channel.send(lang.SESSION_FINISH(preferences.language));
     }
 
     private async sendRank(preferences: GuildPreferences, channel: Channel, reverse: boolean = false): Promise<void> {
