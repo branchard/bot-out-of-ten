@@ -6,7 +6,6 @@ import UiFacesProvider from "./providers/UiFacesProvider";
 import Store from "./Store";
 import path from "path";
 import Settings from './Settings';
-import Gender from "./Gender";
 
 dotenv.config();
 
