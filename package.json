@@ -36,7 +36,7 @@
     "dotenv": "^8.0.0",
     "lodash": "^4.17.15",
     "nedb": "^1.8.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "randomcolor": "^0.5.4",
     "string-format": "^2.0.0",
     "uuid-1345": "^0.99.7"
